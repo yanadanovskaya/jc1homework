@@ -2,12 +2,21 @@ package part1.task6;
 
 public class Exercise6 {
     public static void main(String[] args) {
-        int sec = 604_800, min, h, day, week;
-        min = sec / 60;
-        h = sec / 3600;
-        day = sec / 86_400;
-        week = sec / 604_800;
+        int s = 3700;
+        int sec, m, min,h, hour, d, day, week;
 
-        System.out.println("min=" + min + "; h=" + h + "; day=" + day + "; week=" + week);
+        sec = s % 60;
+        m = (s - sec) / 60;
+
+        min = m % 60;
+        h = (m - min) / 60;
+
+        hour = h % 60;
+        d = (h - hour) / 60;
+
+        day = d % 60;
+        week = (d - day) / 60;
+
+        System.out.println( hour + " часов " + min + " минут " + sec + " часов " + day + " сутки " + week + " недели " );
     }
 }
