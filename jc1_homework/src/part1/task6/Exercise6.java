@@ -17,6 +17,6 @@ public class Exercise6 {
         day = d % 60;
         week = (d - day) / 60;
 
-        System.out.println( hour + " часов " + min + " минут " + sec + " часов " + day + " сутки " + week + " недели " );
+        System.out.println( hour + " час " + min + " минут " + sec + " cекунд " + day + " сутки " + week + " недели " );
     }
 }
