@@ -1,6 +1,6 @@
-package part2.task22;
+package part2.task23;
 
-public class Exercise22 {
+public class Exercise23 {
     public static void main(String[] args) {
 
         int arr[]=new int[10];
@@ -9,5 +9,4 @@ public class Exercise22 {
         for (int i: arr)
             System.out.println( i + " " );//TODO
     }
-
 }
