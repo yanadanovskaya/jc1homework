@@ -10,7 +10,7 @@ public class Exercise21 {
         }
         for (int i: elements)
             System.out.println( i + " " );
-      
+
         for (int i = 0; i < elements.length; i++) {
             int element = elements[i];
             if (maxElement < elements[i]) {
