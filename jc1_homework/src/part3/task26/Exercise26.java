@@ -1,7 +1,5 @@
 package part3.task26;
 
-import java.util.Scanner;
-
 public class Exercise26 {
     public class Bankomat {
         int money20;
