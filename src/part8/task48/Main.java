@@ -1,34 +1,30 @@
 package part8.task48;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
-    public static void main(String args[]) throws Exception {
-        File file = new File("data");
-        FileInputStream fis = new FileInputStream(file);
-        byte[] byteArray = new byte[(int) file.length()];
-
-        fis.read(byteArray);
-        String data = new String(byteArray);
-        System.out.println("Number of characters in the String: " + data.length());
-
-        int count=0;
-            byte[] bytesArray = new byte[(int)file.length()];
-            fis.read(bytesArray);
-            String s = new String(bytesArray);
-            String [] data = s.split(" ");
-            for (int i=0; i<data.length; i++) {
-                count++;
+    public static void main() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("./jc1_homework/src/part8/task48/"));
+            StringBuilder res = new StringBuilder();
+            String s = reader.readLine();
+            while (s != null) {
+                res.append(s);
+                s = reader.readLine();
             }
-            System.out.println("Number of characters in the given file are " +count);
+            Pattern n = Pattern.compile("[.,:;!?]");/*-*/
+            Matcher matcher = n.matcher(res.toString());
+            System.out.println("Количество знаков препинания: " + matcher.results().count());
+            Pattern p = Pattern.compile("\\s*[A-Za-zА-Яа-я0-9'_-]+\\s*");
+            Matcher matcher2 = p.matcher(res.toString());
+            System.out.println("Количество слов: " + matcher2.results().count());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
-
-
-
-
-
-    
+}
 
