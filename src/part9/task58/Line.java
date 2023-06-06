@@ -10,8 +10,8 @@ public class Line {
         public Integer getCounter() {
             return counter;
         }
-        public Line (int size) {
-            myArrayLine = new Integer[size];
+        public Line () {
+            myArrayLine = new Integer[1];
         }
 
         public void add(Integer element) {

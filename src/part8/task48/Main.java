@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class Main {
     public static void main() {
         try {
-            BufferedReader reader = new BufferedReader(new FileReader("./jc1_homework/src/part8/task48/"));
+            BufferedReader reader = new BufferedReader(new FileReader("text.txt"));
             StringBuilder res = new StringBuilder();
             String s = reader.readLine();
             while (s != null) {
@@ -27,4 +27,3 @@ public class Main {
         }
     }
 }
-

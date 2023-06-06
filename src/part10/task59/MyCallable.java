@@ -14,8 +14,8 @@ public class MyCallable implements Callable<List<File>> {
     public List<File> call() throws Exception {
         List<File> fileList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            File file = new File("./src/part10/task59/file_" + Thread.currentThread().getName() + "_" + i);
-            FileWriter fileWriter = new FileWriter("./src/part10/task59/file_" + Thread.currentThread().getName() + "_" + i);
+            File file = new File("./src/part10/task59/file" + Thread.currentThread().getName() + "_" + i);
+            FileWriter fileWriter = new FileWriter("./src/part10/task59/file" + Thread.currentThread().getName() + "_" + i);
             for (int n = 0; n < 10; n++) {
                 fileWriter.write(words[(int) (Math.random() * 10)]);
             }

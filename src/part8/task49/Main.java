@@ -1,45 +1,23 @@
 package part8.task49;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static part8.task49.Text.readNumbers;
+import static part8.task49.Text.writeText;
+
 public class Main {
     public static void main(String[] args) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader("./src/part8/task49/"));
-            StringBuilder res = new StringBuilder();
-            String s = reader.readLine();
-            while (s != null) {
-                res.append(s);
-                res.append("\n");
-                s = reader.readLine();
-            }
-            Pattern p = Pattern.compile("[0-9]+");
-            List<Integer> numbers = new ArrayList<>();
-            Matcher matcher = p.matcher(res.toString());
-            while (matcher.find()) {
-                numbers.add(Integer.valueOf(matcher.group()));
-            }
-            System.out.println(numbers);
-            int sum = 0;
-            List<Integer> uniqueNumbers = new ArrayList<>();
-            for (Integer number : numbers) {
-                sum += number;
-                if (!uniqueNumbers.contains(number)) {
-                    uniqueNumbers.add(number);
-                }
-            }
-            System.out.println("Сумма: " + sum);
-            System.out.println(uniqueNumbers);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String text = " 1, 2, 3, 4 fgrdghb gesdlg 2 3";
+        String fileName = "numbersText.txt";
+        writeText(text, fileName);
+        List<Integer> num = readNumbers(fileName);
+        int sum = num.stream().mapToInt(Integer::intValue).sum();
+        System.out.println("Числа в тексте: " + num);
+        System.out.println("Сумма чисел: " + sum);
+        System.out.println("Числа без повторений: " + new HashSet<>(num));
     }
-}
 
+}
